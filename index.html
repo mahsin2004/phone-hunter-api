@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Hunter</title>
+    <link rel="shortcut icon" href="./img/cup.png" type="image/x-icon">
+
+    <!--FrameWork style link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font awesome link -->
+    <script src="https://kit.fontawesome.com/7828df2977.js" crossorigin="anonymous"></script>
+    <!-- Font style2 -->
+    <style>
+        .workSans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+</head>
+
+
+
+<body class="workSans">
+    <!-- Top Header Section Area -->
+    <section class="h-auto">
+        <div class="bg-[#0d6efd0d] h-[806px]">
+            <header class="lg:max-w-[1440px] mx-auto pt-2 px-4 md:pt-4 md:px-6 lg:pt-12 lg:px-36">
+                <!-- Top section -->
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                        <h1 class="text-base font-semibold lg:text-2xl lg:font-bold">Hot Gadgets</h1>
+                    </div>
+                    <button class="btn bg-[#0D6EFD] text-white">Sign Up</button>
+                </div>
+
+                <!-- Top Tittle Section -->
+                <div class="flex flex-col items-center gap-6 pt-16">
+                    <h1 class="text-2xl md:text-4xl lg:text-6xl text-center font-medium md:font-semibold-medium lg:font-bold">Apple Iphone 13 Pro Max</h1>
+                    <p class="max-w-max lg:max-w-[738px] text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+                    <button class="bg-[#0D6EFD] px-8 py-3 lg:px-12 lg:py-4 text-base rounded-lg lg:text-xl font-bold text-white">Buy Now</button>
+                </div>
+
+                <!-- Banner Area -->
+                <div class="flex items-center justify-center pt-16">
+                    <img src="img/pngwing 2.png" class="hidden sm:block md:hidden" alt="Image">
+                    <img src="img/pngwing 1.png" alt="Image">
+                    <img src="img/pngwing 3.png" class="hidden sm:block md:hidden" alt="Image">
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <!-- Body Area -->
+    <main>
+        <!-- Search section -->
+        <section class="mt-[382px] text-center">
+            <h1 class="text-4xl font-semibold">Search Any Phone</h1>
+            <div class="mt-6 pb-5">
+                <input id="search-field" type="text" placeholder="Search your phone" class="input input-bordered w-full max-w-[250px] md:max-w-md lg:max-w-md bg-[#100f0f0d]" />
+                <button onclick="handleSearch()" class="btn bg-[#0D6EFD] text-white hover:bg-slate-900">search</button>
+            </div>
+            <div id="loading-spinner" class="hidden">
+                <span class="loading text-gray-300 loading-spinner loading-sm md:loading-md lg:loading-lg"></span>
+            </div>
+
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+                <form method="dialog" class="modal-box">
+                    <div id="image-container" class="bg-[#0d6efd0d] rounded-lg">
+
+                    </div>
+                    <div id="information-area" class="flex flex-col gap-2">
+
+                    </div>
+                    <div class="modal-action">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn bg-[#DC3545] text-white hover:text-black">Close</button>
+                    </div>
+                </form>
+            </dialog>
+        </section>
+
+        <!-- Card section Area -->
+        <section id="phones-container" class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-[1440px] mx-auto px-4 md:px-6 lg:pt-12 lg:pb-16 lg:px-36">
+
+        </section>
+
+        <div id="show-all" class="text-center hidden">
+            <button onclick="handleShowAll()" class="bg-orange-500  mt-10 lg:mt-0 mb-4 md:mb-10 lg:mb-20 px-12 py-4  hover:bg-slate-900  rounded-lg text-xl font-medium text-white">Show All >></button>
+        </div>
+    </main>
+
+    <footer>
+        <!-- footer top section -->
+        <section class=" bg-[#0d6efd0d] py-28 mt-9 lg:mt-0">
+            <div class="lg:max-w-[1440px] mx-auto lg:pt-12 lg:px-36">
+                <div class="flex lg:justify-between flex-col md:flex-col lg:flex-row">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-2xl font-bold">Hot Gadgets</h1>
+                        <p>You can definitely work.</p>
+                    </div>
+                    <div class="flex gap-5 mt-3 lg:mt-0 mx-auto lg:mr-0 items-center">
+                        <i class="fa-brands fa-instagram text-rose-600 bg-white rounded-full p-3"></i>
+                        <i class="fa-brands fa-twitter text-sky-500 bg-white rounded-full p-3"></i>
+                        <i class="fa-brands fa-facebook-f text-sky-600 bg-white rounded-full py-3 px-3.5"></i>
+                        <button class="btn bg-[#0D6EFD] text-white hover:bg-slate-900">Join Premium</button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="h-1 bg-slate-300 lg:max-w-6xl mx-auto mt-12 mb-8 rounded-full"></p>
+
+            <!-- Link area -->
+
+            <div class="lg:max-w-[1440px] mx-auto pt-12 px-36">
+                <div class="grid grid-cols-1 text-center lg:text-left md:grid-cols-2 lg:grid-cols-4 text-xl font-medium">
+                    <div class="flex flex-col gap-4">
+                        <h3>Product</h3>
+                        <h3>Browse jobs</h3>
+                        <h3>Remote jobs</h3>
+                        <h3>Startup jobs</h3>
+                        <h3>Company jobs</h3>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3>Popular </h3>
+                        <h3>UI/UX Design</h3>
+                        <h3>Product Design</h3>
+                        <h3>Back-End Developer</h3>
+                        <h3>Front-End Developer</h3>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3>Resource </h3>
+                        <h3>Support</h3>
+                        <h3>Privacy Policy</h3>
+                        <h3>Terms of Service</h3>
+                        <h3>FAQ</h3>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3>Company </h3>
+                        <h3>About Us</h3>
+                        <h3>Contact Us</h3>
+                        <h3>Career</h3>
+                        <h3>Tips Careers</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
